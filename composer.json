@@ -1,0 +1,27 @@
+{
+  "name": "matheuscmpm/NSNFePHPLib",
+  "description": "Vendor do NSNFePHPLib",
+  "version": "1.0",
+  "keywords": ["cakephp"],
+  "homepage": "https://github.com/matheuscmpm/NSNFePHPLib"
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "NSN System",
+      "role": "Author"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "composer/installers": "*"
+  },
+  "extra": {
+    "installer-name": "nsn-nfephp"
+  },
+  "autoload": {
+    "classmap": [
+      "src/TNFeProc.php"
+    ]
+  }
+
+}
