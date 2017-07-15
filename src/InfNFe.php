@@ -1,7 +1,7 @@
 <?php
 
 namespace br\ns\newssystems\NFe\struct;
-require "ide.php";
+require "Ide.php";
 require "Emit.php";
 require "Dest.php";
 require "Det.php";
