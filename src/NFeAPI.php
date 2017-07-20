@@ -32,15 +32,15 @@ class NFeAPI{
 
 		$retornoConsulta = $result;
 
-		if(!($this->isStatusOK(200))) return $retornoConsulta;
+		if(!($this->isStatusOK(200)) || empty($retornoConsulta['nsNRec'])) return $retornoConsulta;
 
 		$nsNRec = $retornoConsulta['nsNRec'];
 		$counter = 0;
 		do {
 			if ($counter == 0){
-				sleep(.25);
-			} else {
 				sleep(3);
+			} else {
+				sleep(8);
 			}
 
 			$counter++;
@@ -57,7 +57,7 @@ class NFeAPI{
 				return $retornoConsulta;
 			}
 
-		} while ($counter < 3);
+		} while ($counter < 15);
 
 		if($this->isCStatNFeAutorizada($retornoConsulta['cStat'])){
 			$retornoXml = $this->downloadNFe($token, $retornoConsulta['chNFe'], $tpDown);
