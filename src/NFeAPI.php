@@ -32,7 +32,13 @@ class NFeAPI{
 
 		$retornoConsulta = $result;
 
-		if(!($this->isStatusOK(200)) || empty($retornoConsulta['nsNRec'])) return $retornoConsulta;
+		if(
+		    empty($retornoConsulta['status']) ||
+            !($this->isStatusOK($retornoConsulta['status'])) ||
+            empty($retornoConsulta['nsNRec'])
+        ) {
+            return $retornoConsulta;
+        }
 
 		$nsNRec = $retornoConsulta['nsNRec'];
 		$counter = 0;
@@ -119,7 +125,6 @@ class NFeAPI{
 				"xJust": "' . $xJust . '"
 
 		}';
-
 		//Envia json para url
 		$result = $this->enviaJsonParaAPI($json, $this->urlCancelamentoNFe);
 		return $result;
