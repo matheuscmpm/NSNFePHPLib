@@ -273,7 +273,7 @@ class NFeAPI{
 		//Passa um json para o campo de envio POST.
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $conteudoAEnviar);
 		//Marca como tipo de arquivo enviado json
-		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json;charset=utf-8'));
 		//Marca que vai receber string
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		//Inicia a conexão
